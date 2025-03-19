@@ -1,51 +1,45 @@
 ---
-interface Props {
-	title: string;
-}
-
-const { title } = Astro.props;
+// Frontmatter: código JavaScript/TypeScript
+const title = "Raúl Rosales - Portafolio";                               
+import './src/styles/global.css'  
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <!-- Tailwind CSS -->
+  <link rel="stylesheet" href="/styles/global.css" />
+</head>
+<body class="bg-gray-100 text-gray-800">
+  <!-- Encabezado -->
+  <header class="bg-white shadow">
+    <div class="container mx-auto px-4 py-6">
+      <h1 class="text-2xl font-bold">Raúl Rosales</h1>
+      <p class="text-gray-600">Profesor de Artes Visuales</p>
+    </div>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="bg-gray-800 text-white">
+    <div class="container mx-auto px-4 py-2">
+      <a href="/" class="mr-4 hover:text-gray-400">Inicio</a>
+      <a href="/about" class="mr-4 hover:text-gray-400">Sobre mí</a>
+      <a href="/projects" class="mr-4 hover:text-gray-400">Proyectos</a>
+      <a href="/contact" class="hover:text-gray-400">Contacto</a>
+    </div>
+  </nav>
+
+  <!-- Contenido de la página -->
+  <main class="container mx-auto px-4 py-8">
+    <slot /> <!-- Aquí se inyectará el contenido de cada página -->
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; 2023 Raúl Rosales. Todos los derechos reservados.</p>
+  </footer>
+</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>
