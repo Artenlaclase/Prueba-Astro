@@ -3,13 +3,28 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Bienvenido al Portafolio de Raúl Rosales">
-  <section class="text-center">
-    <h2 class="text-3xl font-bold mb-4">Bienvenido</h2>
-    <p class="text-lg mb-8">
-      Explora el mundo de las artes visuales a través de mis proyectos y experiencias.
-    </p>
-    <a href="/projects" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600">
-      Ver Proyectos
-    </a>
+  <style>
+    .background-image {
+      background-image: url('/images/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      min-height: calc(100vh - 128px); /* Ajusta según la altura del header y footer */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+
+  <section class="background-image">
+    <div class="bg-grey bg-opacity-50 p-8 rounded-lg text-center text-white transform -translate-y-10">
+      <h2 class="text-3xl font-bold mb-4">Bienvenido</h2>
+      <p class="text-lg mb-45">
+        Explora el mundo de las artes visuales a través de mis proyectos y experiencias.
+      </p>
+      <a href="/projects" class="bg-blue-700 text-white px-6 py-2 rounded hover:bg-blue-600">
+        Ver Proyectos
+      </a>
+    </div>
   </section>
 </Layout>
