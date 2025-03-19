@@ -1,0 +1,24 @@
+---
+const projects = [
+  { title: "Proyecto 1", description: "Descripción del proyecto 1", image: "/images/project1.jpg" },
+  { title: "Proyecto 2", description: "Descripción del proyecto 2", image: "/images/project2.jpg" },
+];
+---
+<html>
+  <head>
+    <title>Proyectos</title>
+  </head>
+  <body>
+    <h1>Proyectos Artísticos</h1>
+    <div>
+      {projects.map(project => (
+        <div>
+          <h2>{project.title}</h2>
+          <img src={project.image} alt={project.title} />
+          <p>{project.description}</p>
+        </div>
+      ))}
+    </div>
+    <a href="/">Volver al inicio</a>
+  </body>
+</html>
